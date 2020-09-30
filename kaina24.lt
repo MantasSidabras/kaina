@@ -25,7 +25,7 @@ def main():
 
         for item in items:
             item = " ".join([x for x in item.values()])
-            print("\t" + item)
+            print(item)
 
         paginator_div = soup.findAll('div', {'class': 'paginator'})[-1]
         next_page = paginator_div.find('a', {'class': 'next'})
