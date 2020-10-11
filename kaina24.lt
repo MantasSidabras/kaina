@@ -27,7 +27,11 @@ def main():
             item = " ".join([x for x in item.values()])
             print(item)
 
-        paginator_div = soup.findAll('div', {'class': 'paginator'})[-1]
+        try:
+            paginator_div = soup.findAll('div', {'class': 'paginator'})[-1]
+        except:
+            exit(1)
+
         next_page = paginator_div.find('a', {'class': 'next'})
         if next_page is None:
             break
