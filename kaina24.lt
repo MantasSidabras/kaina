@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from bs4.element import ResultSet
 import requests
 from sys import argv
+import time
 
 
 def main():
@@ -35,6 +36,7 @@ def main():
         next_page = paginator_div.find('a', {'class': 'next'})
         if next_page is None:
             break
+        time.sleep(1)
         page += 1
 
 
